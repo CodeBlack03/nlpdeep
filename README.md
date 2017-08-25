@@ -12,7 +12,7 @@ NLPDeep - Deep Learning for using NLP tasks. Focus in quality text.
 - gensim
 - glove
 - NILC-Pt-Br
-  -- nilcembbedings
-  -- nlpnet
-  -- coh-metrix 
+  - nilcembbedings
+  - nlpnet
+  - coh-metrix 
 
