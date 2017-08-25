@@ -5,7 +5,7 @@ NLPDeep - Deep Learning for using NLP tasks. Focus in quality text.
 - Keras
 - Tensorflow
 
-## We used
+## We use for NLPDeep
 - sent2vec
 - wang2vec
 - fasttext
