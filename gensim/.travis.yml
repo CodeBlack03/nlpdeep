@@ -1,0 +1,23 @@
+sudo: false
+dist: trusty
+language: python
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+before_install:
+  - wget 'http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh' -O miniconda.sh
+  - chmod +x miniconda.sh
+  - ./miniconda.sh -b
+  - export PATH=/home/travis/miniconda2/bin:$PATH
+  - conda update --yes conda
+install:
+  - conda create --yes -n gensim-test python=$TRAVIS_PYTHON_VERSION pip atlas numpy==1.11.3 scipy==0.18.1
+  - source activate gensim-test
+  - python setup.py install
+  - pip install .[test]
+script:
+  - pip freeze
+  - python setup.py test
+  - pip install flake8
+  - continuous_integration/travis/flake8_diff.sh
